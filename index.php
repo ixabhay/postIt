@@ -42,7 +42,10 @@ $query  = 'SELECT content, DATE_ADD(DATE_ADD(timestamp,INTERVAL 5 HOUR),INTERVAL
 mysqli_query($db, $query) or die('Error querying database.');
 ?>
 
-<form name="postit" action="post.php" method="post" onsubmit="return check()">
+?>
+
+<form name="postit" action="post.php" method="post" onsubmit="return ValidCaptcha();">
+<input type="textarea" name="humans" id="humans" class="humans" />
 <textarea name="content" placeholder="enter a text" style="width:100%; height:150px"></textarea>
 <input align="center"type="submit" style="background-color: #4e4e4e;
     border: none; width: 100%;
